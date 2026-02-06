@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "id": "combat-utils",
+  "version": "${version}",
+  "name": "Combat-Utils",
+  "description": "Meteor Client addon that is focused on Combat Modules.",
+  "authors": [
+    "FeinBerg67"
+  ],
+  "contact": {
+    "sources": "https://github.com/FeinBerg67/Combat-Utils"
+  },
+  "license": "MIT",
+  "icon": "assets/combat-utils/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "meteor": [
+      "combatutils.CombatUtils"
+    ]
+  },
+  "depends": {
+    "java": ">=21",
+    "minecraft": ">=1.21",
+    "meteor-client": "*"
+  },
+  "custom": {
+    "meteor-client:color": "225,25,25"
+  }
+}
