@@ -38,10 +38,3 @@ jobs:
           name: Combat-Utils-1.21.8
           path: build/libs/*.jar
           if-no-files-found: error
-          
-      - name: Create Release
-        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
-        uses: softprops/action-gh-release@v2
-        with:
-          name: Combat-Utils-1.21.8
-          files: build/libs/*.jar
