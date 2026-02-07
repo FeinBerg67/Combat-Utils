@@ -85,13 +85,6 @@ public class JumpReset extends Module {
         .build()
     );
 
-    private final Setting<Boolean> onlyOnGround = sgTargeting.add(new BoolSetting.Builder()
-        .name("only-on-ground")
-        .description("Only activate when you are on the ground.")
-        .defaultValue(true)
-        .build()
-    );
-
     private final Setting<Boolean> onlyFromPlayers = sgTargeting.add(new BoolSetting.Builder()
         .name("only-from-players")
         .description("Only activate when damaged by players.")
@@ -108,8 +101,8 @@ public class JumpReset extends Module {
         if (mc.player == null || mc.world == null) return;
         if (event.entity != mc.player) return;
 
-        // Check if only on ground
-        if (onlyOnGround.get() && !mc.player.isOnGround()) return;
+        // Always check if on ground (required for jump reset to work properly)
+        if (!mc.player.isOnGround()) return;
 
         // Check if only from players
         Entity attacker = event.entity.getAttacker();
