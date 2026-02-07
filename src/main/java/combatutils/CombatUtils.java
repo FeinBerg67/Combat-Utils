@@ -15,6 +15,8 @@ public class CombatUtils extends MeteorAddon {
 
         // Register modules directly into Meteor's Combat category
         Modules.get().add(new AimAssist());
+        Modules.get().add(new JumpReset());
+        Modules.get().add(new WTap());
     }
 
     @Override
