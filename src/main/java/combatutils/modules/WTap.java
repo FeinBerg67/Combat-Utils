@@ -8,8 +8,6 @@ import meteordevelopment.meteorclient.systems.modules.Module;
 import meteordevelopment.orbit.EventHandler;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
-import net.minecraft.util.hit.EntityHitResult;
-import net.minecraft.util.hit.HitResult;
 
 public class WTap extends Module {
     private final SettingGroup sgGeneral = settings.getDefaultGroup();
@@ -251,6 +249,6 @@ public class WTap extends Module {
     public enum WTapMode {
         Release,  // Release and repress W key
         Sneak,    // Use sneak to reset sprint
-        STap      // Use S key to reset sprint
+        STap      // Temporary S tap to reset sprint
     }
 }
