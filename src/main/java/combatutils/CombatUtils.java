@@ -1,6 +1,8 @@
 package combatutils;
 
 import combatutils.modules.AimAssist;
+import combatutils.modules.JumpReset;
+import combatutils.modules.WTap;
 import meteordevelopment.meteorclient.addons.MeteorAddon;
 import meteordevelopment.meteorclient.systems.modules.Modules;
 import org.slf4j.Logger;
@@ -13,10 +15,11 @@ public class CombatUtils extends MeteorAddon {
     public void onInitialize() {
         LOG.info("Initializing Combat-Utils");
 
-        // Register modules directly into Meteor's Combat category
         Modules.get().add(new AimAssist());
         Modules.get().add(new JumpReset());
         Modules.get().add(new WTap());
+        
+        LOG.info("Combat-Utils initialized with {} modules", 3);
     }
 
     @Override
