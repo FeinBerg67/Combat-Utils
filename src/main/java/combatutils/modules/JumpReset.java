@@ -7,6 +7,7 @@ import meteordevelopment.meteorclient.systems.modules.Module;
 import meteordevelopment.orbit.EventHandler;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
 
 public class JumpReset extends Module {
@@ -161,6 +162,6 @@ public class JumpReset extends Module {
         Vec3d lookVec = mc.player.getRotationVec(1.0f);
         double dot = lookVec.dotProduct(direction);
         
-        return Math.toDegrees(Math.acos(Math.max(-1.0, Math.min(1.0, dot))));
+        return Math.toDegrees(Math.acos(MathHelper.clamp(dot, -1.0, 1.0)));
     }
 }
